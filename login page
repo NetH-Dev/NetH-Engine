@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+	
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			font-family: arial;
+			font-size: 12pt;
+			text-align: center;
+			background-color: #f1f1f1;
+		}
+		
+		input{
+			padding: 5px 10px;
+			border: 2px solid #c3c3c3;
+			border-radius: 50px;
+			background-color: #ffffff;
+			width: 150px;
+		}
+		
+		input[type="submit"]{
+			width: 70px;
+			padding: 5px;
+		}
+		
+		@keyframes c_ans {
+			0% {}
+			20% {background-color:#0f0; width:130px; color:#ffffff;}
+			100% {}
+		}
+		
+		@keyframes w_ans {
+			0% {}
+			20% {background-color:#f00; width:130px; color:#ffffff;}
+			100% {}
+		}
+		
+		@keyframes fade{
+			0% {opacity:1;}
+			20% {opacity:0;}
+			100% {opacity:1;}
+		}
+	</style>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			window.resizeTo(400,150);
+			window.moveTo(500, 200);
+			document.body.scroll = "no";
+			usr_inp.focus();
+			};
+			
+			function check_pass(e){
+				if(e.keyCode==13 || e=="click"){
+					if(usr_inp.value == "root"){
+						usr_inp.style.animation = "c_ans 1s";
+						window.setTimeout("reset(1)", 700);
+						msgArea.style.animation = "fade 1s";
+						window.setTimeout("reset(3)",200);
+							var wshShell = new ActiveXObject("WScript.Shell");
+							wshShell.Run("Menu.hta");
+					} else {
+						usr_inp.style.animation = "w_ans 1s";
+						window.setTimeout("reset(2)", 1000);
+						msgArea.style.animation = "fade 1s";
+						window.setTimeout("reset(4)",200);
+					}
+				}
+
+			}
+			
+			function reset(direct){
+				if(direct==1){
+					usr_inp.style.removeProperty("animation");
+					msgArea.style.removeProperty("animation");
+					window.close();
+				}else if(direct==2){
+					usr_inp.style.removeProperty("animation");	
+					msgArea.style.removeProperty("animation");
+					usr_inp.value = "";
+					usr_inp.focus();
+				}else if(direct==3){
+					msgArea.innerHTML = "Sign in succeeded!";
+				}else if(direct==4){
+					msgArea.innerHTML = "Sign in failed!";
+				}
+			}
+	</script>
+	
+</head>
+<body>
+	<div id="msgArea">Please Login</div>
+	
+	<input type="password" id="usr_inp" onkeydown="check_pass(event)"/>
+	<input type="submit" value="sign in" onclick="check_pass('click')" />
+</body>
+</html>
