@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Home Page</title>
+<HTA:Application 
+Applicationname="NetH_Home_Page"
+ID="NU"
+
+InnerBorder="no"
+Icon="https://iconarchive.com/download/i96324/iconsmind/outline/Home-2-2.ico"
+Icon="homep.ico"
+MaximizeButton="no"
+MinimizeButton="no"
+Scroll="no"
+ContextMenu="no"
+Selection="no"
+SingleInstance="yes"
+Border="thin"
+
+Version="1.0"
+
+/>
+
+<script language="vbscript">
+
+Sub Window_OnLoad()
+window.resizeTo 500,400
+
+
+End Sub
+
+Function cont()
+CreateObject("WScript.Shell").Run "NetH.hta"
+	window.close()
+End Function
+
+Function noB()
+	window.close()
+End Function
+
+Function li()
+CreateObject("WScript.Shell").Run "li.bat"
+	window.close()
+End Function
+
+</script>
+
+<style>
+
+
+body {
+margin: 5px;
+padding: 10px;
+font-family: arial;
+font-size: 12pt;
+}
+
+
+#btma {
+position: absolute;
+bottom: 0px;
+background-color: #f0f0f0;
+height: 50px;
+width: 100%;
+text-align: right;
+padding: 12px;
+}
+
+button {
+width: 85px;
+border: none;
+border-radius: 30px;
+background-color: #ffff;
+}
+
+button:active {
+	border-radius: 0px;
+
+}
+</style>
+
+
+
+</head>
+<body>
+
+<div id="tpa">
+Do you want to acces to menu?
+</div>
+
+<div id="btma">
+<button id="yb" onclick="cont()">Continue</button>
+<button id="nb" onclick="noB()">Abort</button>
+<button id="nb" onclick="li()">Liscence</button>
+</div>
+
+
+
+</body>
+</html>
