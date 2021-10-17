@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Menu Page</title>
+<HTA:Application 
+Applicationname="NetH_Menu_Page"
+ID="NU"
+
+InnerBorder="no"
+Icon="https://iconarchive.com/download/i96324/iconsmind/outline/Home-2-2.ico"
+Icon="homep.ico"
+MaximizeButton="no"
+MinimizeButton="no"
+Scroll="no"
+ContextMenu="no"
+Selection="no"
+SingleInstance="yes"
+Border="thin"
+
+Version="1.0"
+
+/>
+
+<script language="vbscript">
+
+Sub Window_OnLoad()
+window.resizeTo 700,500
+
+
+End Sub
+
+Function nr()
+CreateObject("WScript.Shell").Run "wifitbsh.cmd"
+	window.close()
+End Function
+
+Function cons()
+CreateObject("WScript.Shell").Run "cneth.bat"
+	window.close()
+End Function
+
+Function np()
+CreateObject("WScript.Shell").Run "pinger.bat"
+	window.close()
+End Function
+
+Function rfrs()
+CreateObject("WScript.Shell").Run "Menu.hta"
+	window.close()
+End Function
+
+
+Function upd()
+CreateObject("WScript.Shell").Run ".exe"
+	window.close()
+End Function
+
+
+Function exit()
+	window.close()
+End Function
+
+</script>
+
+<style>
+
+
+body {
+margin: 5px;
+padding: 10px;
+font-family: arial;
+font-size: 12pt;
+}
+
+
+#btch {
+position: absolute;
+bottom: 0px;
+background-color: #f0f0f0;
+height: 50px;
+width: 100%;
+text-align: right;
+padding: 12px;
+}
+
+button {
+width: 200px;
+border: none;
+border-radius: 150px;
+background-color: #ffff;
+}
+
+button:active {
+	border-radius: 0px;
+
+}
+</style>
+
+
+
+</head>
+<body>
+
+<div id="tpa">
+Welcome user!
+</div>
+
+<div id="btch">
+<button id="nrb" onclick="nr()">NETWORK RESET</button>
+<button id="conb" onclick="cons()">CONSOLE</button>
+<button id="npb" onclick="np()">NETWORK PINGER</button>
+<button id="rfrsb" onclick="rfrs()">REFRESH</button>
+<button id="updb" onclick="upd()">UPDATE</button>
+<button id="exitb" onclick="exit()">EXIT</button>
+</div>
+
+
+
+</body>
+</html>
