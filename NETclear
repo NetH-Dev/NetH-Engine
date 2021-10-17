@@ -1,0 +1,20 @@
+@echo off
+color 4
+title Network Trouble Shooting
+prompt $G
+cls
+ipconfig /all
+tree
+netsh int ip reset
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns
+driverquery
+timeout /t 2 /nobreak >nul
+cls
+color f
+title Clear!
+cls
+echo. CLEAR!
+timeout /t 2 /nobreak >nul
+exit
