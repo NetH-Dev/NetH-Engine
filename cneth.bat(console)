@@ -1,0 +1,28 @@
+color 4
+mode con lines=15 cols=50
+@echo off
+cls
+title NetH\\User\Console
+cls
+color 4
+cls
+cd C:\Users\%username%\
+tree
+timeout /t 1 /nobreak >nul
+:rfs
+mode con lines=30 cols=95
+prompt $g
+cls
+color 2
+cls
+chcp 65001
+cls
+echo. 
+echo.      ██████╗ ██████╗ ███╗   ██╗███████╗ ██████╗ ██╗     ███████╗
+echo.     ██╔════╝██╔═══██╗████╗  ██║██╔════╝██╔═══██╗██║     ██╔════╝
+echo.     ██║     ██║   ██║██╔██╗ ██║███████╗██║   ██║██║     █████╗  
+echo.     ██║     ██║   ██║██║╚██╗██║╚════██║██║   ██║██║     ██╔══╝  
+echo.     ╚██████╗╚██████╔╝██║ ╚████║███████║╚██████╔╝███████╗███████╗
+echo.      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚══════╝╚══════╝
+echo.                                                                                          
+cmd /k
